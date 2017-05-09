@@ -3,10 +3,6 @@
 
 using namespace std;
 
-struct Position
-{
-    int x, y;
-};
 
 
 class Object
@@ -28,47 +24,10 @@ public:
 };
 
 
-class Player : public  Object
-{
-    string name;
-    int hp;
 
 
-    vector <Item> equipment;
 
 
-    int getStrenght()
-    {
-        int strenght = 0;
-
-        for(int i =0; i < equipment.size(); i++)
-        {
-
-            strenght+=equipment[i].getStrenght;
-        }
-    }
-// Brakuje pozycji
-};
-
-public:
-    Player(string name, int hp); // Dodaæ zmienne do konstruktora
-
-    Position positionOnMap()
-    {
-        return getPosition();
-    }
-
-    int PlayerStrenght()
-    {
-
-    }
-
-    void addToEquipment(Item &item)
-    {
-        equipment.push_back(item);
-    }
-
-};
 
 
 
@@ -119,22 +78,7 @@ public:
 };
 
 
-class Potion : public Interactive, Object
-{
-    int vitality;
-    int position; // Nie jestem pewny =
-public:
-    Potion(int vitality);
-    void interact(Player player)
-    {
 
-    }
-
-    int positionOnMap()
-    {
-
-    }
-};
 
 int main()
 {
