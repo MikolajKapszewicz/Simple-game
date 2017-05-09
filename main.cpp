@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -7,22 +8,23 @@ struct Position
     int x, y;
 };
 
-class Player;
-class Enemy;
-class Potion;
-class Item;
-
 
 class Object
 {
+
+    Position position;
 public:
-    virtual int positionOnMap () = 0;
+    //virtual Position positionOnMap () = 0;
+    Position getPosition()
+    {
+        return position;
+    }
 };
 
 class Interactive
 {
 public:
-    virtual void interact(Player player) = 0;
+    virtual void interact(Player &player) = 0;
 };
 
 
@@ -30,20 +32,40 @@ class Player : public  Object
 {
     string name;
     int hp;
-// Brakuje Item
+
+
+    vector <Item> equipment;
+
+
+    int getStrenght()
+    {
+        int strenght = 0;
+
+        for(int i =0; i < equipment.size(); i++)
+        {
+
+            strenght+=equipment[i].getStrenght;
+        }
+    }
 // Brakuje pozycji
+};
 
 public:
     Player(string name, int hp); // Dodaæ zmienne do konstruktora
 
-    int positionOnMap()
+    Position positionOnMap()
     {
-
+        return getPosition();
     }
 
     int PlayerStrenght()
     {
 
+    }
+
+    void addToEquipment(Item &item)
+    {
+        equipment.push_back(item);
     }
 
 };
@@ -53,17 +75,26 @@ public:
 class Item : public Interactive, Object
 {
     int strenght;
-    int position; // Nie jestem pewny
+    Position position; // Nie jestem pewny
 public:
-    Item(int strenght);
-    void interact(Player player)
+    Item(int strenght, Position position)
     {
-
+        this->strenght = strenght;
+        this->position = position;
+    }
+    void interact(Player &player)
+    {
+        return;
     }
 
-    int positionOnMap()
+    Position positionOnMap()
     {
+        return position;
 
+
+    int getStrenght()
+    {
+        return strenght;
     }
 
 
@@ -72,17 +103,17 @@ public:
 class Enemy : public Interactive, Object
 {
     int strenght;
-    int position; // Nie jestem pewny
+
 public:
     Enemy (int strenght);
-    void interact(Player player)
+    void interact(Player &player)
     {
-
+        if()
     }
 
-    int positionOnMap()
+    Position positionOnMap()
     {
-
+        return getPosition();
     }
 
 };
