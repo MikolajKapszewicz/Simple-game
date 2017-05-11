@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1494516918 source:c:\users\mateusz\desktop\game\main.cpp
+	<iostream>
+	"AdvancedClasses.h"
+
+1494512726 source:c:\users\mateusz\desktop\game\object.cpp
+	"Object.h"
+
+1494515307 c:\users\mateusz\desktop\game\object.h
+
+1494512515 c:\users\mateusz\desktop\game\position.h
+
+1494515233 source:c:\users\mateusz\desktop\game\item.cpp
+	"Item.h"
+
+1494515450 c:\users\mateusz\desktop\game\item.h
+	"BaseClasses.h"
+	<vector>
+
+1494515319 c:\users\mateusz\desktop\game\interactive.h
+
+1494515069 source:c:\users\mateusz\desktop\game\player.cpp
+
+1494514827 c:\users\mateusz\desktop\game\player.h
+	<vector>
+	"Item.h"
+
+1494515412 source:c:\users\mateusz\desktop\game\baseclasses.cpp
+	"BaseClasses.h"
+
+1494515330 c:\users\mateusz\desktop\game\baseclasses.h
+
+1494516323 source:c:\users\mateusz\desktop\game\itemandplayer.cpp
+	"ItemAndPlayer.h"
+
+1494516310 c:\users\mateusz\desktop\game\itemandplayer.h
+	"BaseClasses.h"
+	<vector>
+
+1494517238 c:\users\mateusz\desktop\game\advancedclasses.h
+	"BaseClasses.h"
+	<vector>
+
+1494517431 source:c:\users\mateusz\desktop\game\advancedclasses.cpp
+	"AdvancedClasses.h"
+	<iostream>
+
